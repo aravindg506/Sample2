@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Sample2.Models.tblDepartment>
+          @using Sample2.Models;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+            <input id="Text1" name="username" type="text" />
+        </th>
+        <th></th>
+    </tr>
+    <ul>
+        @foreach (tblDepartment item in Model)
+        {
+           
+        <li>
+            @Html.ActionLink(item.Name, "Index", "Emp", new { id = item.Id }, null)
+        </li>
+        }
+    </ul>
+
+</table>
